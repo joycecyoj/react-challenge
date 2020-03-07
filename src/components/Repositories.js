@@ -1,30 +1,28 @@
 import * as React from "react";
+import RepositorySearchResults from "./RepositorySearchResults";
 
-/**
- * Once given an input, fetch the repositories we searched
- * via:
- *
- * https://api.github.com/search/repositories?q={}
- *
- * This should not kickoff a fetch for every keystroke, but rather when
- * typing stops.
- *
- * Documentation for the search api is here:
- * https://developer.github.com/v3/search/#search-repositories
- */
+export default function Repositories() {
+  const [searchString, setSearch] = React.useState("");
 
-const Repositories = () => {
-  let searchResults;
+  React.useEffect(() => {
+  }, [searchString]);
+
   return (
     <div>
-      <input name="search-terms" />
-      {searchResults ? (
-        <RepositorySearchResults searchResults={searchResults} />
+      <input name="search-terms" placeholder="Search for..."
+        onChange={(e) => setSearch(e.target.value)} />
+
+      {searchString ? (
+        <RepositorySearchResults searchString={searchString} />
       ) : (
-        <div>Enter somee test to search github repositories</div>
+        <div>Enter some test to search github repositories</div>
       )}
+
+      <div>
+        {searchString}
+      </div>
+
     </div>
+
   );
 };
-
-export default Repositories;
