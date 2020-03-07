@@ -47,8 +47,11 @@ You should not take more than 4 hours of time on this, even if you feel incomple
 Please, answer the following questions in this readme, underneath the question
 
 1. Name a newer feature of javascript that you believe is extra useful, and discuss how you have used it in this project, or how you would use it if needed.
+ES6 arrow functions - they were used in event handlers and react hooks
 
 2. What are 3 things you think `React` does very poorly? What tools do this better, if any?
+ - there is no event system for custom events, angular has custom events binding with event emitters
+ - there is only one way data binding and it takes more code to update state, angular has two way data binding with the forms module and any value entered will be bound
 
 ## Submissions
 
